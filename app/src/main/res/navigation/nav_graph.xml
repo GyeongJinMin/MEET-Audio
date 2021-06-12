@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="kr.ac.hansung.audio.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_callingFragment"
+            app:destination="@id/callingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/callingFragment"
+        android:name="kr.ac.hansung.audio.calling.CallingFragment"
+        android:label="fragment_calling"
+        tools:layout="@layout/fragment_calling" >
+        <action
+            android:id="@+id/action_callingFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+</navigation>
